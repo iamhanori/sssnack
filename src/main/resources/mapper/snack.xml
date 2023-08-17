@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTO Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--               @Mapper 가 있는 파일위치 패키지명-->
+<mapper namespace="krkrkr.sssnack.mapper.snackMapper">
+    <!--        @Mapper에 있는 메서드 이름   DTO가 있는 파일위치 패키지명-->
+    <insert id="insert" parameterType="krkrkr.sssnack.dto.snackDTO">
+        insert into snack (id, name, price, company) values(#{id}, #{name}, #{price}, #{company})
+    </insert>
+
+    <select id="listAll" resultType="krkrkr.sssnack.dto.snackDTO">
+        select * from snack
+    </select>
+
+    <select id="read" resultType="krkrkr.sssnack.dto.snackDTO">
+        select * from snack where id = #{id}
+    </select>
+
+    <update id="update" parameterType="krkrkr.sssnack.dto.snackDTO">
+        update snack set name = #{name} where id = #{id}
+    </update>
+
+    <delete id="delete" parameterType="krkrkr.sssnack.dto.snackDTO">
+        delete from snack where id = #{id}
+    </delete>
+</mapper>
+
