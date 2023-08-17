@@ -5,22 +5,27 @@
 <!--               @Mapper 가 있는 파일위치 패키지명-->
 <mapper namespace="krkrkr.sssnack.mapper.snackMapper">
     <!--        @Mapper에 있는 메서드 이름   DTO가 있는 파일위치 패키지명-->
+    <!--  상품 등록  -->
     <insert id="insert" parameterType="krkrkr.sssnack.dto.snackDTO">
         insert into snack (id, name, price, company) values(#{id}, #{name}, #{price}, #{company})
     </insert>
 
+    <!--  상품 목록  -->
     <select id="listAll" resultType="krkrkr.sssnack.dto.snackDTO">
         select * from snack
     </select>
 
+    <!--  상품 불러오기 - (수정 전) -->
     <select id="read" resultType="krkrkr.sssnack.dto.snackDTO">
         select * from snack where id = #{id}
     </select>
 
+    <!--  상품 수정  -->
     <update id="update" parameterType="krkrkr.sssnack.dto.snackDTO">
         update snack set name = #{name} where id = #{id}
     </update>
 
+    <!--  상품 삭제  -->
     <delete id="delete" parameterType="krkrkr.sssnack.dto.snackDTO">
         delete from snack where id = #{id}
     </delete>

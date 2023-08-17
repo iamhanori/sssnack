@@ -11,14 +11,14 @@ public interface snackMapper {
     // select (list)
     public List<snackDTO> listAll();
 
-    // select (read)
-    public snackDTO read(String id);
-
     // insert
     public void insert(snackDTO dto);
 
     // delete
     public void delete(String id);
+
+    // read
+    public snackDTO read(String id);
 
     // update
     public void update(snackDTO dto);
